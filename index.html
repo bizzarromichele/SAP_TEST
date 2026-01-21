@@ -1,5 +1,148 @@
-<!DOCTYPE html>
-<html>
-<script src='https://cdn.jotfor.ms/agent/embedjs/019bdf84a88d7410945dee0b037486b9365c/embed.js'>
-</script>
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Informativa & Consenso</title>
+  <style>
+    :root { color-scheme: dark; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:#0b1020;
+      color:#e9ecf3;
+      display:flex;
+      min-height:100vh;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+    .card{
+      width:min(820px, 100%);
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.45);
+      overflow:hidden;
+    }
+    .header{
+      padding:20px 22px;
+      background:linear-gradient(135deg, rgba(128,90,213,0.35), rgba(50,130,246,0.18));
+      border-bottom:1px solid rgba(255,255,255,0.12);
+    }
+    .title{
+      margin:0;
+      font-size:20px;
+      font-weight:700;
+    }
+    .subtitle{
+      margin:6px 0 0 0;
+      color:rgba(233,236,243,0.8);
+      font-size:14px;
+    }
+    .content{
+      padding:18px 22px 6px 22px;
+      font-size:14px;
+      line-height:1.6;
+    }
+    ul{ margin:10px 0 14px 18px; }
+    li{ margin:8px 0; }
+    .note{
+      margin:14px 0 0 0;
+      padding:12px;
+      border-left:4px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.04);
+      border-radius:10px;
+      font-size:13px;
+      color:rgba(233,236,243,0.85);
+    }
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      padding:14px 22px 20px 22px;
+      border-top:1px solid rgba(255,255,255,0.12);
+      background:rgba(0,0,0,0.18);
+    }
+    .btn{
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      padding:10px 14px;
+      border-radius:12px;
+      cursor:pointer;
+      font-weight:650;
+    }
+    .btn.primary{
+      background:rgba(128,90,213,0.55);
+      border-color:rgba(128,90,213,0.75);
+    }
+    .small{
+      font-size:12px;
+      color:rgba(233,236,243,0.7);
+      margin-left:auto;
+      align-self:center;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="card" role="dialog" aria-modal="true">
+    <div class="header">
+      <h1 class="title">Prima di iniziare</h1>
+      <p class="subtitle">Informativa sul trattamento delle conversazioni AI</p>
+    </div>
+
+    <section class="content">
+      <p>
+        Questa chat è un servizio di assistenza digitale. Proseguendo, confermi di aver compreso che
+        le conversazioni possono essere <strong>registrate automaticamente</strong> esclusivamente
+        per finalità tecniche, di sicurezza, audit e miglioramento del servizio.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Sicurezza e crittografia:</strong> le comunicazioni avvengono tramite connessioni sicure
+          (es. HTTPS/TLS) e i dati sono protetti da misure di sicurezza e crittografia adeguate.
+        </li>
+        <li>
+          <strong>Accesso ai contenuti:</strong> le conversazioni <strong>non vengono lette, consultate
+          né monitorate dallo sviluppatore</strong> del servizio, né da operatori umani o da soggetti terzi.
+          L’accesso umano ai contenuti è disabilitato o limitato ai soli casi previsti dalla legge.
+        </li>
+        <li>
+          <strong>Riservatezza:</strong> evita di inserire dati personali sensibili
+          (password, PIN, numeri di carte di credito, dati sanitari).
+        </li>
+        <li>
+          <strong>Consenso:</strong> continuando, dichiari di accettare questa informativa
+          e i termini di utilizzo del servizio.
+        </li>
+      </ul>
+
+      <p class="note">
+        Nota: il servizio è progettato per funzionare in modo automatizzato e sicuro.
+        Nessuna conversazione viene utilizzata per finalità diverse da quelle indicate.
+      </p>
+    </section>
+
+    <div class="actions">
+      <button class="btn primary" id="acceptBtn">✅ Accetto e continuo</button>
+      <button class="btn" id="declineBtn">❌ Non accetto</button>
+      <div class="small">Sarai reindirizzato in base alla tua scelta</div>
+    </div>
+  </main>
+
+  <script>
+    const ACCEPT_URL  = "https://eu.jotform.com/agent/019bdf84a88d7410945dee0b037486b9365c";
+    const DECLINE_URL = "https://www.google.com";
+
+    document.getElementById("acceptBtn").onclick = () => {
+      window.location.href = ACCEPT_URL;
+    };
+    document.getElementById("declineBtn").onclick = () => {
+      window.location.href = DECLINE_URL;
+    };
+  </script>
+</body>
 </html>
